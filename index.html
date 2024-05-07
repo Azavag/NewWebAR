@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | WebGlProject</title>
+    <title>Cube in Void</title>
     <meta name="description" content="">
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
@@ -56,6 +56,8 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((instance) => {
           unityInstance = instance;
+          // Вызываем функцию переключения в AR-режиме сразу после создания экземпляра Unity
+          unityInstance.Module.WebXR.toggleAR();
           loadingBar.style.display = "none";
           if (fullscreenButton)
           {
@@ -63,8 +65,7 @@
               unityInstance.SetFullscreen(1);
             };
           }
-          // Вызываем функцию переключения в AR-режиме сразу после создания экземпляра Unity
-          unityInstance.Module.WebXR.toggleAR();
+          
         }).catch((message) => {
           alert(message);
         });
