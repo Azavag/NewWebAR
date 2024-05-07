@@ -20,10 +20,10 @@
           <div id="unity-progress-bar-full"></div>
         </div>
       </div>
-      <div id="unity-footer">
+      <!-- <div id="unity-footer">
         <button id="entervr" value="Enter VR" disabled>VR</button>
         <button id="enterar" value="Enter AR" disabled>AR</button>
-      </div>
+      </div> -->
     </div>
     <script>
       var buildUrl = "Build";
@@ -72,23 +72,23 @@
       };
       document.body.appendChild(script);
 
-      let enterARButton = document.getElementById('enterar');
-      let enterVRButton = document.getElementById('entervr');
+      // let enterARButton = document.getElementById('enterar');
+      // let enterVRButton = document.getElementById('entervr');
       
 
-      document.addEventListener('onARSupportedCheck', function (event) {
-        enterARButton.disabled = !event.detail.supported;
-      }, false);
-      document.addEventListener('onVRSupportedCheck', function (event) {
-        enterVRButton.disabled = !event.detail.supported;
-      }, false);
+      // document.addEventListener('onARSupportedCheck', function (event) {
+      //   enterARButton.disabled = !event.detail.supported;
+      // }, false);
+      // document.addEventListener('onVRSupportedCheck', function (event) {
+      //   enterVRButton.disabled = !event.detail.supported;
+      // }, false);
 
-      enterARButton.addEventListener('click', function (event) {
-        unityInstance.Module.WebXR.toggleAR();
-      }, false);
-      enterVRButton.addEventListener('click', function (event) {
-        unityInstance.Module.WebXR.toggleVR();
-      }, false);
+      // enterARButton.addEventListener('click', function (event) {
+      //   unityInstance.Module.WebXR.toggleAR();
+      // }, false);
+      // enterVRButton.addEventListener('click', function (event) {
+      //   unityInstance.Module.WebXR.toggleVR();
+      // }, false);
     </script>
   </body>
 </html>
