@@ -21,7 +21,6 @@
         </div>
       </div>
       <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
         <button id="entervr" value="Enter VR" disabled>VR</button>
         <button id="enterar" value="Enter AR" disabled>AR</button>
       </div>
@@ -64,6 +63,8 @@
               unityInstance.SetFullscreen(1);
             };
           }
+          // Вызываем функцию переключения в AR-режиме сразу после создания экземпляра Unity
+          unityInstance.Module.WebXR.toggleAR();
         }).catch((message) => {
           alert(message);
         });
@@ -72,6 +73,7 @@
 
       let enterARButton = document.getElementById('enterar');
       let enterVRButton = document.getElementById('entervr');
+      
 
       document.addEventListener('onARSupportedCheck', function (event) {
         enterARButton.disabled = !event.detail.supported;
